@@ -17,7 +17,7 @@ public class DepartmentServiceImpl implements DepartmentService{
     private DepartmentRepository repository;
 
     @Override
-    public List<Department> saveDepartment(List<Department> departments) {
+    public List<Department> saveDepartments(List<Department> departments) {
        return repository.saveAll(departments);
     }
 
@@ -62,5 +62,10 @@ public class DepartmentServiceImpl implements DepartmentService{
     @Override
     public List<Department> getDepartmentByName(String name) {
         return repository.findAllByNameIgnoreCase(name);
+    }
+
+    @Override
+    public Department saveDepartment(Department department) {
+        return repository.save(department);
     }
 }

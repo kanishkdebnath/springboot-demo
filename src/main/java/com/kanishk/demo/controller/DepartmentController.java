@@ -20,9 +20,15 @@ public class DepartmentController {
     private final Logger logger = LoggerFactory.getLogger(DepartmentController.class);
 
     @PostMapping("/departments")
-    public List<Department> saveDepartment(@Valid @RequestBody List<Department> departments) {
+    public List<Department> saveDepartments(@Valid @RequestBody List<Department> departments) {
         logger.info("Saving {} departments", departments.size());
-        return service.saveDepartment(departments);
+        return service.saveDepartments(departments);
+    }
+
+    @PostMapping("/department")
+    public Department saveDepartment(@Valid @RequestBody Department department) {
+        logger.info("Saving department : {}", department);
+        return service.saveDepartment(department);
     }
 
     @GetMapping("/departments")

@@ -2,11 +2,12 @@ package com.kanishk.demo.service.department;
 
 import com.kanishk.demo.entity.Department;
 import com.kanishk.demo.exception.DepartmentNotFoundException;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
 public interface DepartmentService {
-    List<Department> saveDepartment(List<Department> department);
+    List<Department> saveDepartments(List<Department> department);
 
     List<Department> fetchDepartments();
 
@@ -17,4 +18,6 @@ public interface DepartmentService {
     Department updateById(Long id, Department department);
 
     List<Department> getDepartmentByName(String name);
+
+    Department saveDepartment(@Valid Department department);
 }
