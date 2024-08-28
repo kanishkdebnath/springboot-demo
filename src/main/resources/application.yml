@@ -1,0 +1,120 @@
+spring:
+  profiles:
+    active: prod
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  application:
+    name: demo
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springdemo
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+# Uncomment the following section if you want to use H2 Database instead of PostgreSQL
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:kanishk
+#    driverClassname: org.h2.Driver
+#    username: sa
+#    password: password
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+
+server:
+  port: 1000
+
+# some random config
+welcome:
+  message: (Prod) Welcome to Demo Spring boot app by Kanishk!
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: qa
+  application:
+    name: demo
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springdemo
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+# Uncomment the following section if you want to use H2 Database instead of PostgreSQL
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:kanishk
+#    driverClassname: org.h2.Driver
+#    username: sa
+#    password: password
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+
+server:
+  port: 1000
+
+# some random config
+welcome:
+  message: (QA) Welcome to Demo Spring boot app by Kanishk!
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  application:
+    name: demo
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springdemo
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+# Uncomment the following section if you want to use H2 Database instead of PostgreSQL
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:kanishk
+#    driverClassname: org.h2.Driver
+#    username: sa
+#    password: password
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+
+server:
+  port: 1000
+
+# some random config
+welcome:
+  message: (DEV) Welcome to Demo Spring boot app by Kanishk!
